@@ -8,15 +8,7 @@ pipeline {
 }
     stages {
         
-            stage ( 'maven package') {
-                steps {
-                  dir('./fastfood_BackEnd/'){
-                  sh 'mvn clean'
-                  sh 'mvn install'
-                  sh 'mvn package'
-                  }
-                }
-            }
+            
           stage("build & SonarQube analysis") {          
             steps {
                 dir('./fastfood_BackEnd/'){
