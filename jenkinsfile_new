@@ -7,8 +7,15 @@ pipeline {
   maven 'M2_HOME'
 }
     stages {
-
-        stage("build & SonarQube analysis") {          
+        
+            stage ( 'maven package') {
+                steps {
+                  sh 'mvn clean'
+                  sh 'mvn install'
+                  sh 'mvn package'
+                }
+            }
+          stage("build & SonarQube analysis") {          
             steps {
                 dir('./fastfood_BackEnd/'){
                     withSonarQubeEnv('SonarServer') {
