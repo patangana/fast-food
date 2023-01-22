@@ -86,8 +86,10 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-                <groupId>com.github.ulisesbocchio</groupId>
-                <artifactId>jasypt-maven-plugin</artifactId>
+                <properties>
+             <sonar.organization>patangana-newfastfoodtest</sonar.organization>
+             <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+             </properties>
                 <version>3.0.3</version>
             </plugin>
 		</plugins>
